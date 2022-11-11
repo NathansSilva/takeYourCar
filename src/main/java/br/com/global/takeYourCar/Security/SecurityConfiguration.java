@@ -31,8 +31,6 @@ public class SecurityConfiguration {
                 // WEB
                 // .antMatchers(HttpMethod.POST, "/task").authenticated()
                 // .antMatchers("/css/**").permitAll()
-
-                // Others
                 .anyRequest().permitAll()
                 // .anyRequest().permitAll()
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{~/css/global.css}">
+  <title>Cadastrar carros</title>
+</head>
+
+<body>
+  <header class="header-bg">
+    <div class="header container">
+      <a href="/carro">
+        <h1>TakeYourCar</h1>
+      </a>
+      <nav>
+        <ul class="header-menu">
+          <li><a href="/carro/">Carros Disponiveis</a></li>
+          <li><a href="/carro/newCarro">Cadastrar Carro</a></li>
+          <li><a href="/user">Usuários</a></li>
+        </ul>
+      </nav>
+      <div>
+        <a class="material-icons" href="/logout" title="sair">logout</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="cadastro-dados">
+        <h2 class="h2-form">Cadastrar novo Usuário</h2>
+
+        <form class="form" action="/user" method="POST" th:object="${user}">
+          <div class="col-full">
+            <input type="hidden" th:field="*{id}" id="id">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" th:field="*{nome}">
+            <span th:errors="*{nome}"></span>
+          </div>
+
+          <div class="col-full">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" th:field="*{email}">
+            <span th:errors="*{email}"></span>
+          </div>
+
+          <div>
+            <label for="password">Senha</label>
+            <input type="text" name="password" id="password" th:field="*{password}">
+            <span th:errors="*{password}"></span>
+          </div>
+          <div class="buttons">
+            <a href="/user" class="button cancel">cancelar</a>
+            <input class="button btn" type="submit" value="cadastrar">
+          </div>
+        </form>
+      </section>
+    </div>
+
+  </main>
+
+
+</body>
+
+</html>

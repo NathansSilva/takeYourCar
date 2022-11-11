@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{~/css/global.css}">
+    <title>Cadastrar carros</title>
+</head>
+
+<body>
+
+    <header class="header-bg">
+        <div class="header container">
+            <a href="/carro">
+                <h1>TakeYourCar</h1>
+            </a>
+            <nav>
+                <ul class="header-menu">
+                    <li><a href="/carro">Carros Disponiveis</a></li>
+                    <li><a href="#">Cadastrar Carro</a></li>
+                    <li><a href="/user">Usuários</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a class="material-icons" href="/logout" title="sair">logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="cadastro-dados">
+                <h2 class="h2-form">Cadastrar novo Carro</h2>
+                <form class="form" action="/carro" method="POST" th:object="${carro}">
+
+                    <div>
+                        <input type="hidden" th:field="*{id}" id="id">
+                        <label for="modelo">Modelo</label>
+                        <input type="text" name="modelo" id="modelo" th:field="*{modelo}">
+                        <span th:errors="*{modelo}"></span>
+                    </div>
+
+                    <div>
+                        <label for="marca">Marca</label>
+                        <input type="text" name="marca" id="marca" th:field="*{marca}">
+                        <span th:errors="*{marca}"></span>
+                    </div>
+
+                    <div class="col-full">
+                        <label for="nota">Nota</label>
+                        <input type="text" name="nota" id="nota" th:field="*{nota}">
+                        <span th:errors="*{nota}"></span>
+                    </div>
+
+                    <div class="col-full">
+                        <label for="valor">Valor</label>
+                        <input type="text" name="valor" id="valor" th:field="*{valor}">
+                        <span th:errors="*{valor}"></span>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="/carro" class="button cancel">cancelar</a>
+                        <input class="button btn" type="submit" value="cadastrar">
+                    </div>
+            </section>
+        </div>
+    </main>
+    </form>
+
+
+</body>
+
+</html>

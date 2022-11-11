@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{~/css/global.css}">
+  <title>Lista de usuários</title>
+</head>
+
+<body>
+  <header class="header-bg">
+    <div class="header container">
+      <a href="/carro">
+        <h1>TakeYourCar</h1>
+      </a>
+      <nav>
+        <ul class="header-menu">
+          <li><a href="/carro">Carros Disponiveis</a></li>
+          <li><a href="/carro/newCarro">Cadastrar Carro</a></li>
+          <li><a href="#">Usuários</a></li>
+          <li><a href="/user/newUser">Cadastrar Usuário</a></li>
+        </ul>
+      </nav>
+      <div>
+        <a class="material-icons" href="/logout" title="sair">logout</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="container card">
+    <main th:each="user : ${user}">
+      <div class="card-item">
+        <span th:text="${user.nome}"></span>
+        <span th:text="${user.email}"></span>
+        <span></span>
+        <span></span>
+        <div>
+          <a th:href="${'/user/delete/' + user.id}"><span class="material-icons">delete</span></a>
+        </div>
+        <div>
+          <a th:href="${'/user/update/' + user.id}">
+            <span class="material-icons">edit</span>
+          </a>
+        </div>
+      </div>
+    </main>
+  </section>
+
+</body>
+
+</html>

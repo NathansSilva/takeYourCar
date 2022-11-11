@@ -1,0 +1,16 @@
+br\com\global\takeYourCar\Controller\Web\UserWebController.class
+br\com\global\takeYourCar\Service\CarroService.class
+br\com\global\takeYourCar\Controller\CarroController.class
+br\com\global\takeYourCar\Service\UserDetailsServiceImp.class
+br\com\global\takeYourCar\dto\UserDto.class
+br\com\global\takeYourCar\Model\User.class
+br\com\global\takeYourCar\Repository\CarroRepository.class
+br\com\global\takeYourCar\Repository\UserRepository.class
+br\com\global\takeYourCar\takeYourCarApplication$1.class
+br\com\global\takeYourCar\takeYourCarApplication.class
+br\com\global\takeYourCar\Controller\Web\CarroWebController.class
+br\com\global\takeYourCar\Model\Carro.class
+br\com\global\takeYourCar\Controller\UserController.class
+br\com\global\takeYourCar\Model\Role.class
+br\com\global\takeYourCar\Service\UserService.class
+br\com\global\takeYourCar\Security\SecurityConfiguration.class
